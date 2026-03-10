@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import { NavLink, useNavigate } from 'react-router-dom';
-import Bow from '../../Assets/Bow.png';
+// import Bow from '../../Assets/Bow.png';
 
 export default function EAppbar() {
 
