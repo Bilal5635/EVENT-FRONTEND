@@ -43,6 +43,22 @@ export default function ViewUsers() {
   const navigate = useNavigate();
 
   // Fetch users
+  // const fetchUsers = async () => {
+  //   try {
+  //     const res = await axios.get(`${host}/users/getuser`);
+  //     if (res.data) {
+  //       setUsers(res.data.data);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching users:", error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchUsers();
+  // }, [host,fetchUsers]);
+
+  useEffect(() => {
   const fetchUsers = async () => {
     try {
       const res = await axios.get(`${host}/users/getuser`);
@@ -54,9 +70,8 @@ export default function ViewUsers() {
     }
   };
 
-  useEffect(() => {
-    fetchUsers();
-  }, [host,fetchUsers]);
+  fetchUsers();
+}, [host]);
 
   
   

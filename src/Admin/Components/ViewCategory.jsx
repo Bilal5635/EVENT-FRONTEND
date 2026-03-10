@@ -60,7 +60,7 @@ export default function ViewCategory() {
 
   useEffect(() => {
     fetchCategories();
-  }, [host]);
+  }, [host,fetchCategories]);
 
   // Delete category
   // const handleDelete = async (id) => {

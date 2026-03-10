@@ -65,7 +65,7 @@ export default function AcceptedBookings() {
 
   useEffect(() => {
     fetchBookings();
-  }, [host]);
+  }, [host,fetchBookings]);
 
   return (
 

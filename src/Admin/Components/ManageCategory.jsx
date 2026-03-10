@@ -64,7 +64,7 @@ export default function ViewCategory() {
 
   useEffect(() => {
     fetchCategories();
-  }, [deleteStatus,host]);
+  }, [deleteStatus,host,fetchCategories]);
 
   const handleDelete = async (id) => {
 

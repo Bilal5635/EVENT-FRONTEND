@@ -65,7 +65,7 @@ export default function ContactLaterBookings() {
 
   useEffect(() => {
     fetchBookings();
-  }, [host]);
+  }, [host,fetchBookings]);
 
   return (
 

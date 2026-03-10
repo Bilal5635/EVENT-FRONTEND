@@ -61,7 +61,7 @@ export default function ViewEvents() {
 
   useEffect(() => {
     fetchEvents();
-},[host]);
+},[host,fetchEvents]);
 
 //   const handleDelete = async (id) => {
 
