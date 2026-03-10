@@ -19,6 +19,8 @@ export default function Dashboard() {
   const [bookings, setBookings] = useState(0);
   const [acceptedBookings, setAcceptedBookings] = useState(0);
 
+  useEffect(() => {
+
   const fetchData = async () => {
 
     try {
@@ -37,7 +39,6 @@ export default function Dashboard() {
 
       // BOOKINGS
       const bookingRes = await axios.post(`${host}/booking/all`);
-
       const bookingData = bookingRes.data.data;
 
       setBookings(bookingData.length);
@@ -56,10 +57,9 @@ export default function Dashboard() {
 
   };
 
-  useEffect(() => {
-    fetchData();
-  }, [host,fetchData]);
+  fetchData();
 
+}, [host]);
   const cardStyle = {
     padding: 3,
     textAlign: "center",

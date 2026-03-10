@@ -11,6 +11,8 @@ export default function Services() {
 
   const [categories, setCategories] = useState([]);
 
+  useEffect(() => {
+
   const fetchCategories = async () => {
     try {
       const res = await axios.post(`${host}/category/getcat`);
@@ -24,9 +26,9 @@ export default function Services() {
     }
   };
 
-  useEffect(() => {
-    fetchCategories();
-  }, [fetchCategories,host]);
+  fetchCategories();
+
+}, [host]);
 
   return (
     

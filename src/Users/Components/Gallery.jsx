@@ -13,6 +13,8 @@ export default function Gallery() {
   const [events, setEvents] = useState([]);
   const [openImage, setOpenImage] = useState(null);
 
+  useEffect(() => {
+
   const fetchEvents = async () => {
     try {
 
@@ -27,10 +29,9 @@ export default function Gallery() {
     }
   };
 
-  useEffect(() => {
-    fetchEvents();
-  }, [fetchEvents,host]);
+  fetchEvents();
 
+}, [host]);
   return (
     <>
     <EAppbar/>

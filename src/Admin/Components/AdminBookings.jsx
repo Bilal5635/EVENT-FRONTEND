@@ -57,10 +57,10 @@ export default function AdminBookings() {
   // FETCH BOOKINGS
   // ============================
 
+  useEffect(() => {
+
   const fetchBookings = async () => {
-
     try {
-
       const res = await axios.post(`${host}/booking/all`);
 
       if (res.data.success) {
@@ -70,13 +70,11 @@ export default function AdminBookings() {
     } catch (error) {
       console.log("Error fetching bookings:", error);
     }
-
   };
 
+  fetchBookings();
 
-  useEffect(() => {
-    fetchBookings();
-  }, [host,fetchBookings]);
+}, [host]);
 
 
   // ============================

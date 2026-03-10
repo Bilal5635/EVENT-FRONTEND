@@ -47,6 +47,8 @@ export default function ViewCategory() {
   const navigate = useNavigate();
 
   // Fetch categories
+  useEffect(() => {
+
   const fetchCategories = async () => {
     try {
       const res = await axios.post(`${host}/category/getcat`);
@@ -58,9 +60,9 @@ export default function ViewCategory() {
     }
   };
 
-  useEffect(() => {
-    fetchCategories();
-  }, [host,fetchCategories]);
+  fetchCategories();
+
+}, [host]);
 
   // Delete category
   // const handleDelete = async (id) => {

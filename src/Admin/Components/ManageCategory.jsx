@@ -46,6 +46,8 @@ export default function ViewCategory() {
 
   const navigate = useNavigate();
 
+ useEffect(() => {
+
   const fetchCategories = async () => {
     try {
 
@@ -62,9 +64,9 @@ export default function ViewCategory() {
     }
   };
 
-  useEffect(() => {
-    fetchCategories();
-  }, [deleteStatus,host,fetchCategories]);
+  fetchCategories();
+
+}, [deleteStatus, host]);
 
   const handleDelete = async (id) => {
 

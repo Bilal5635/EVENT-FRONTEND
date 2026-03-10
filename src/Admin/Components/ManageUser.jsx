@@ -48,6 +48,8 @@ export default function ManageUsers() {
   const [search, setSearch] = useState(""); 
 
   // Fetch users
+useEffect(() => {
+
   const fetchUsers = async () => {
     try {
       const res = await axios.get(`${host}/users/getuser`);
@@ -59,9 +61,9 @@ export default function ManageUsers() {
     }
   };
 
-  useEffect(() => {
-    fetchUsers();
-  }, [deleteStatus,host,fetchUsers]);
+  fetchUsers();
+
+}, [deleteStatus, host]);
 
   // Delete user with confirmation
   const handleDelete = (id) => {

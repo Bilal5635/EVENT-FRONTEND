@@ -21,29 +21,29 @@ export default function MyEvents() {
 
   const { host } = useContext(UserContext);
   const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-  
 
   const [bookings, setBookings] = useState([]);
-  useEffect(() => {
-  
-      const token = localStorage.getItem("userToken");
-  
-      if (!token) {
-        alert("LOGIN TO FETCH YOUR ORDERS");
-        setIsLoggedIn(false);
-        navigate("/login");
-      }
-  
-    }, [navigate]);
 
+  // LOGIN CHECK
+  useEffect(() => {
+
+    const token = localStorage.getItem("userToken");
+
+    if (!token) {
+      alert("LOGIN TO FETCH YOUR ORDERS");
+      navigate("/login");
+    }
+
+  }, [navigate]);
+
+  // FETCH BOOKINGS
   useEffect(() => {
 
     const fetchBookings = async () => {
 
       try {
 
-        const token = JSON.parse(localStorage.getItem("userToken"));
+        const token = localStorage.getItem("userToken");
 
         const res = await axios.post(
           `${host}/booking/mybookings`,
@@ -67,17 +67,16 @@ export default function MyEvents() {
 
   }, [host]);
 
-
+  // STATUS COLOR
   const getColor = (status) => {
 
     if (status === "Accepted") return "green";
     if (status === "Rejected") return "red";
     if (status === "Contact Later") return "orange";
 
-    return "#1976d2"; // Pending
+    return "#1976d2";
 
   };
-
 
   return (
 
@@ -99,7 +98,6 @@ export default function MyEvents() {
         Home
       </Button>
 
-
       <Typography
         variant="h4"
         sx={{
@@ -109,7 +107,6 @@ export default function MyEvents() {
       >
         My Event Bookings
       </Typography>
-
 
       <Paper>
 
@@ -127,7 +124,6 @@ export default function MyEvents() {
             </TableRow>
 
           </TableHead>
-
 
           <TableBody>
 
@@ -175,5 +171,3 @@ export default function MyEvents() {
   );
 
 }
-
-

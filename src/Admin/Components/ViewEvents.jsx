@@ -43,6 +43,8 @@ export default function ViewEvents() {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+
   const fetchEvents = async () => {
     try {
 
@@ -59,9 +61,9 @@ export default function ViewEvents() {
     }
   };
 
-  useEffect(() => {
-    fetchEvents();
-},[host,fetchEvents]);
+  fetchEvents();
+
+}, [host]);
 
 //   const handleDelete = async (id) => {
 

@@ -40,6 +40,8 @@ export default function ContactLaterBookings() {
   const [bookings, setBookings] = useState([]);
 
   // FETCH BOOKINGS
+  useEffect(() => {
+
   const fetchBookings = async () => {
 
     try {
@@ -63,9 +65,9 @@ export default function ContactLaterBookings() {
 
   };
 
-  useEffect(() => {
-    fetchBookings();
-  }, [host,fetchBookings]);
+  fetchBookings();
+
+}, [host]);
 
   return (
 

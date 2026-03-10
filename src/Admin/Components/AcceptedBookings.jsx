@@ -41,6 +41,7 @@ export default function AcceptedBookings() {
   const [bookings, setBookings] = useState([]);
 
   // FETCH BOOKINGS
+ useEffect(() => {
   const fetchBookings = async () => {
     try {
 
@@ -48,7 +49,6 @@ export default function AcceptedBookings() {
 
       if (res.data.success) {
 
-        // FILTER ONLY ACCEPTED BOOKINGS
         const acceptedBookings = res.data.data.filter(
           (b) => b.status === "Accepted"
         );
@@ -57,15 +57,12 @@ export default function AcceptedBookings() {
       }
 
     } catch (error) {
-
       console.log("Error fetching bookings:", error);
-
     }
   };
 
-  useEffect(() => {
-    fetchBookings();
-  }, [host,fetchBookings]);
+  fetchBookings();
+}, [host]);
 
   return (
 
