@@ -37,32 +37,33 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 export default function AcceptedBookings() {
 
   const { host } = useContext(UserContext);
-
   const [bookings, setBookings] = useState([]);
 
-  // FETCH BOOKINGS
- useEffect(() => {
-  const fetchBookings = async () => {
-    try {
+  useEffect(() => {
 
-      const res = await axios.post(`${host}/booking/all`);
+    const fetchBookings = async () => {
+      try {
 
-      if (res.data.success) {
+        const res = await axios.post(`${host}/booking/all`);
 
-        const acceptedBookings = res.data.data.filter(
-          (b) => b.status === "Accepted"
-        );
+        if (res.data.success) {
 
-        setBookings(acceptedBookings);
+          const acceptedBookings = res.data.data.filter(
+            (b) => b.status === "Accepted"
+          );
+
+          setBookings(acceptedBookings);
+        }
+
+      } catch (error) {
+        console.log("Error fetching bookings:", error);
       }
+    };
 
-    } catch (error) {
-      console.log("Error fetching bookings:", error);
-    }
-  };
+    fetchBookings();
 
-  fetchBookings();
-}, [host]);
+  }, [host]);
+
 
   return (
 
