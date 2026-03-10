@@ -47,12 +47,12 @@ export default function EAppbar() {
 
           {/* LOGO + BRAND */}
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Box
+            {/* <Box
               component="img"
               src={Bow}
               alt="Dream Hue Events"
               sx={{ height: 58, mr: 1 }}
-            />
+            /> */}
             <Typography
               sx={{
                 fontFamily: '"Playfair Display", serif',
