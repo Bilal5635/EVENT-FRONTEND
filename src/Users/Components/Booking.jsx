@@ -66,7 +66,7 @@ export default function Booking() {
     .then(res => setUser(res.data.data))
     .catch(err => console.log(err));
 
-  }, []);
+  }, [host]);
 
 
   // ===============================
@@ -80,7 +80,7 @@ export default function Booking() {
       .then(res => setCategories(res.data.data))
       .catch(err => console.log(err));
 
-  }, [isLoggedIn]);
+  }, [isLoggedIn,host]);
 
 
   // FETCH EVENTS
@@ -92,7 +92,7 @@ export default function Booking() {
       .then(res => setEvents(res.data.data))
       .catch(err => console.log(err));
 
-  }, [isLoggedIn]);
+  }, [isLoggedIn,host]);
 
 
   const handlechange = (e) => {

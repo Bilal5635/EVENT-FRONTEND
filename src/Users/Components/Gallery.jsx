@@ -29,7 +29,7 @@ export default function Gallery() {
 
   useEffect(() => {
     fetchEvents();
-  }, []);
+  }, [fetchEvents,host]);
 
   return (
     <>

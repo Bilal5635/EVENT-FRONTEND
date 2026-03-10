@@ -61,7 +61,7 @@ export default function ManageUsers() {
 
   useEffect(() => {
     fetchUsers();
-  }, [deleteStatus]);
+  }, [deleteStatus,host]);
 
   // Delete user with confirmation
   const handleDelete = (id) => {

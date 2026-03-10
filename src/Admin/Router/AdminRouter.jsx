@@ -1,40 +1,6 @@
-// import React from 'react';
-// import { Routes, Route } from 'react-router-dom';
-// import ManageUser from '../Components/ManageUser';
-// import Dashboard from '../Components/Dashboard';
-// import AdminLogin from '../Components/AdminLogin';
-// import Viewuser from '../Components/ViewUsers';
-// import ClickDrawer from '../Components/ClickDrawer';
-// import AddCategory from '../Components/AddCategory';
-// import ViewCategory from '../Components/ViewCategory';
-// import { useLocation } from 'react-router-dom';
-
-
-// export default function AdminRouter() {
-//   const location = useLocation();
-// const noDrawer = ['/adminlogin']; // hide drawer on login
-// const token = localStorage.getItem('adminToken');
-// if (!token) return <AdminLogin />;
-//   return (
-//     <div>        
-      
-
-// {!noDrawer.includes(location.pathname) && <ClickDrawer />}
-//       <Routes>
-//         <Route path='/' element={<Dashboard />} />
-//         <Route path='/manageuser' element={<ManageUser />} />
-//         <Route path='/viewuser' element={<Viewuser />} />
-//         <Route path='/viewcat' element={<ViewCategory />} />
-//         <Route path='/addcat' element={<AddCategory />} />
-//         <Route path='/adminlogin' element={<AdminLogin/>} />
-//       </Routes>
-//     </div>
-//   );
-// }
-
 
 import React from 'react';
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Dashboard from '../Components/Dashboard';
 import AdminLogin from '../Components/AdminLogin';
 import ClickDrawer from '../Components/ClickDrawer';
@@ -51,7 +17,7 @@ import AcceptedBookings from '../Components/AcceptedBookings';
 import ContactLaterBookings from '../Components/ContactLaterBookings';
 
 export default function AdminRouter() {
-  const location = useLocation();
+  // const location = useLocation();
   const token = localStorage.getItem('adminToken');
 
   // If not logged in → show login only

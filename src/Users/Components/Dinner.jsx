@@ -23,7 +23,7 @@ setEvents(dinnerEvents);
 
 });
 
-}, []);
+}, [host]);
 
 return (
 

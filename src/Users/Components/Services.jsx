@@ -26,7 +26,7 @@ export default function Services() {
 
   useEffect(() => {
     fetchCategories();
-  }, []);
+  }, [fetchCategories,host]);
 
   return (
     

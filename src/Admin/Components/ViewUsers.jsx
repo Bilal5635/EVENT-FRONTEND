@@ -56,7 +56,7 @@ export default function ViewUsers() {
 
   useEffect(() => {
     fetchUsers();
-  }, []);
+  }, [host,fetchUsers]);
 
   
   

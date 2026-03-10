@@ -65,7 +65,7 @@ export default function MyEvents() {
 
     fetchBookings();
 
-  }, []);
+  }, [host]);
 
 
   const getColor = (status) => {

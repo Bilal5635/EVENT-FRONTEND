@@ -27,7 +27,7 @@ export default function Birthday() {
       })
       .catch(err => console.log(err));
 
-  }, []);
+  }, [host]);
 
 
   return (

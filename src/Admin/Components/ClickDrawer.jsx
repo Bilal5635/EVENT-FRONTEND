@@ -18,7 +18,7 @@ import { useNavigate } from 'react-router-dom';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import EventIcon from '@mui/icons-material/Event';
 import CategoryIcon from '@mui/icons-material/Category';
-import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
+
 
 const drawerWidth = 240;
 

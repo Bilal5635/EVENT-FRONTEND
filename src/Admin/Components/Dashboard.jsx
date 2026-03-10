@@ -58,7 +58,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [host]);
 
   const cardStyle = {
     padding: 3,

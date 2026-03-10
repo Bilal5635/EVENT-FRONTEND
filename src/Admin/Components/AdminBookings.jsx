@@ -76,7 +76,7 @@ export default function AdminBookings() {
 
   useEffect(() => {
     fetchBookings();
-  }, []);
+  }, [host]);
 
 
   // ============================

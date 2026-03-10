@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import EventAvailableIcon from "@mui/icons-material/EventAvailable";
+
 
 import { UserContext } from "../../MyContextProvider";
 import axios from "axios";
@@ -65,7 +65,7 @@ export default function AcceptedBookings() {
 
   useEffect(() => {
     fetchBookings();
-  }, []);
+  }, [host]);
 
   return (
 

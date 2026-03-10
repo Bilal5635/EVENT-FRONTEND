@@ -8,7 +8,6 @@ import {
   TableHead,
   TableRow,
   Paper,
-  IconButton,
   Button,
   Typography,
 } from "@mui/material";
@@ -62,7 +61,7 @@ export default function ViewEvents() {
 
   useEffect(() => {
     fetchEvents();
-},[]);
+},[host]);
 
 //   const handleDelete = async (id) => {
 

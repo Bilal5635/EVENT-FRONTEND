@@ -9,7 +9,6 @@ import {
   TableHead,
   TableRow,
   Paper,
-  IconButton,
   Button,
   Typography,
 } from "@mui/material";
@@ -61,7 +60,7 @@ export default function ViewCategory() {
 
   useEffect(() => {
     fetchCategories();
-  }, []);
+  }, [host]);
 
   // Delete category
   // const handleDelete = async (id) => {
